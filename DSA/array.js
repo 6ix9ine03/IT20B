@@ -1,3 +1,4 @@
+
 class Array{
 
     constructor(initialData = []){
@@ -23,7 +24,7 @@ class Array{
 
     insert(index, element){
         //Correcting Statement || Must be false
-        if(index <0 || index > this.length){
+        if(index <0 || index >= this.length){
             console.log("Invalid Index");
             return;
         }
@@ -38,6 +39,24 @@ class Array{
         this.length++;
     }
 
+    delete(index){
+
+        //Correcting Statement || Must be false
+        if(index <0 || index >= this.length){
+            console.log("Invalid Index");
+            return;
+        }
+
+        //Shifting Condition
+        for(let i= index; i< this.length; i++){
+            this.data[i] = this.data[i+1];
+        }
+
+        //After Condition
+        delete this.data[this.length-1];
+        this.length--;
+
+    }
 }
 
 //
@@ -45,4 +64,6 @@ arr1 = new Array([4,2,3]);
 
 arr1.traverse();
 arr1.insert(0,9);
+arr1.traverse();
+arr1.delete(1);
 arr1.traverse();
