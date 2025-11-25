@@ -20,7 +20,7 @@ class Array{
 
         console.log(output);
     }
-}
+
     insert(index, element){
         //Correcting Statement || Must be false
         if(index <0 || index > this.length){
@@ -38,7 +38,11 @@ class Array{
         this.length++;
     }
 
+}
 
+//
 arr1 = new Array([4,2,3]);
 
+arr1.traverse();
+arr1.insert(0,9);
 arr1.traverse();
